@@ -450,6 +450,11 @@ class Ui_Form(object):
         self.pushButton.setText(_translate("Form", "Начать игру"))
 
 
+################################################################
+# But the game itself
+################################################################
+
+
 class Form(QtWidgets.QWidget):
     def __init__(self, NameOfTest, Login):
         super(Form, self).__init__()
@@ -647,6 +652,10 @@ def pyGame(NameOfTest):
     pygame.quit()
 
 
+################################################################
+################################################################
+
+
 class ResultWindow(QWidget, Ui_Result):
     def __init__(self, NameOfTest, Login):
         global count_Quests, count_YourRightAnswers
@@ -748,6 +757,9 @@ class Application(QMainWindow):  # сборка классов в одно пр�
         self.WOS.show()
         self.ST.close()
 
+################################################################
+################################################################
+
     def show_RunTest(self):  # показать окно с прохождением теста
         self.ST.close()
         self.Game = Form(self.ST.GiveNameOfTest(), self.ST.GiveLogin())
@@ -757,6 +769,9 @@ class Application(QMainWindow):  # сборка классов в одно пр�
             self.Game.close()
             self.ST.show()
             print(is_ST)
+
+################################################################
+################################################################
 
     # def Show(self):
     #     self.RW.pushButton.clicked.connect(self.backToST)
